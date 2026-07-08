@@ -42,7 +42,7 @@ case $opt in
     bash <(curl -s https://raw.githubusercontent.com/chizzybrook731-debug/chizzy_channel/main/chizzy_channel.sh)
     ;;
  3)
-    echo -e "${C}Admin: chizzybrook731${R}"
+    echo -e "${C}Admin: chizzy +263777984650${R}"
     echo -e "${C}DM me on WhatsApp${R}"
     ;;
  4)
