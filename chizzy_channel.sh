@@ -1,56 +1,49 @@
 #!/bin/bash
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+YOUR_NUMBER="263777984650"
+PRO_CODE="1560"
+
 clear
+echo -e "${BLUE}"
+echo " CHIZZY CHANNEL v2.0 PRO"
+echo -e "${NC}"
+echo " ───────────────────────────"
 
-# COLORS
-B='\033[1;34m'
-C='\033[1;36m'
-G='\033[1;32m'
-Y='\033[1;33m'
-W='\033[1;37m'
-R='\033[0m'
+echo -e "${YELLOW}[1]${NC} Free Version"
+echo -e "${GREEN}[2]${NC} PRO Version - \$1"
+echo "[0] Exit"
+read -p "Choose: " version
 
-# BLUE BANNER
-echo -e "${B}"
-echo "  ____ _   _ ___ ____ ____  ____"
-echo " / ___| | | |_ _/ ___/ ___||  _ \\"
-echo "| |   | |_| || |\\___ \\___ \\| |_) |"
-echo "| |___|  _  || | ___) |__) |  _ < "
-echo " \\____|_| |_|___|____/____/|_| \\_\\"
-echo -e "${R}"
-echo -e "${C} 🔥 WELCOME TO CHIZZY CHANNEL 🔥${R}"
-echo -e "${B}==================================================${R}"
+if [ "$version" = "2" ]; then
+    clear
+    echo -e "${GREEN}PRO VERSION - ONLY \$1${NC}"
+    echo "─────────────────────"
+    echo "PRO Features:"
+    echo "1. Custom Banner Creator"
+    echo "2. Auto-Join Link Generator" 
+    echo "3. Gold VIP Theme"
+    echo ""
+    MESSAGE="I%20want%20to%20buy%20the%20PRO%20feature%20code%20for%20%241"
+    WA_LINK="https://wa.me/${YOUR_NUMBER}?text=${MESSAGE}"
+    echo "Opening WhatsApp..."
+    sleep 2
+    termux-open-url "$WA_LINK" 2>/dev/null
+    echo -e "\nAfter payment I will send you code: ${CYAN}1560${NC}"
+    exit
+fi
 
-# MENU
-while true
-do
-echo ""
-echo -e "${Y}[1]${R} ${W}Join WhatsApp Channel${R}"
-echo -e "${Y}[2]${R} ${W}Get Latest Updates${R}"
-echo -e "${Y}[3]${R} ${W}Contact Admin${R}"
-echo -e "${Y}[4]${R} ${W}Exit${R}"
-echo -e "${B}==================================================${R}"
-echo -ne "${C}Choose option: ${R}"
-read opt
+if [ "$version" = "1" ]; then
+    clear
+    echo -e "${BLUE}FREE VERSION${NC}"
+    echo "[1] Join WhatsApp Channel"
+    echo "https://whatsapp.com/channel/0029VbB3hqHFXuX6EU6ZJ2Y"
+fi
 
-case $opt in
- 1)
-    echo -e "${G}Opening WhatsApp Channel...${R}"
-    am start -a android.intent.action.VIEW -d "https://whatsapp.com/channel/0029VbB3hqHFXUuX6EU6ZJ2Y"
-    ;;
- 2)
-    echo -e "${G}Checking for updates...${R}"
-    bash <(curl -s https://raw.githubusercontent.com/chizzybrook731-debug/chizzy_channel/main/chizzy_channel.sh)
-    ;;
- 3)
-    echo -e "${C}Admin: chizzy +263777984650${R}"
-    echo -e "${C}DM me on WhatsApp${R}"
-    ;;
- 4)
-    echo -e "${B}Goodbye 🔥${R}"
-    exit 0
-    ;;
- *)
-    echo -e "${R}Invalid option. Try again.${R}"
-    ;;
-esac
-done
+if [ "$version" = "0" ]; then
+    exit
+fi
