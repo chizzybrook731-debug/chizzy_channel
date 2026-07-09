@@ -11,6 +11,7 @@ sleep 1
 REPO="https://github.com/chizzybrook731-debug/chizzy_channel.git"
 DIR="$HOME/chizzy_channel"
 
+cd $HOME
 [ -d "$DIR" ] && rm -rf "$DIR"
 
 echo -e "${YELLOW}Downloading...${NC}"
